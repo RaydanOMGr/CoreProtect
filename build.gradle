@@ -22,6 +22,11 @@ if (System.getenv("BUILD_NUMBER") != null) {
 }
 logger.info("Building version $version")
 
+if(System.getenv("BRANCH") != null) {
+    projectBranch = System.getenv("BRANCH")
+}
+logger.info("Branch ${projectBranch}")
+
 repositories {
     maven { url = 'https://hub.spigotmc.org/nexus/content/groups/public/' }
     maven { url = 'https://repo.papermc.io/repository/maven-public/' }
